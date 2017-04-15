@@ -167,10 +167,13 @@ session_start();
                </ul>
            </li>
            <li>
-              <button id="myButton" type="button" class="button_coin" autocomplete="off" data-value="use">
+           <form method="post" action="subcoin.php">
+             <input type="hidden" value="<? echo $_SESSION['abc']; ?>">
+          
+              <button id="myButton" type="submit" class="button_coin" autocomplete="off" data-value="use" value="submit"> 
                         ใช้งาน
                         <div class="ripple-wrapper"></div>
-          </button>
+          </button></form>
            </li>
        </ul>
    </div>
