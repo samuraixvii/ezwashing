@@ -32,8 +32,11 @@ $coin =$codeval['value'];
 	
 	}
 
+		//echo print_r($result['coin'], true);
 
+	
 
+ if ("'{$coin}'" != "0") {
 
 	$HOST_NAME = "localhost";
 	$DB_NAME = "ezwashing";
@@ -62,6 +65,15 @@ $result = "UPDATE ezwashing set coin = $coinall  where  username = '{$_SESSION['
 	
 	
 if ($db->query($result) == TRUE) {
+	$del = "DELETE from code where gencode = '{$_POST['gencode']}'
+";
+if ($db->query($del) == TRUE) {
+
+	
+} else {
+
+}
+
   echo "<script type='text/javascript'>";
 	echo "alert('Refund Success');";
 	echo "window.location = 'credit.php'; ";
@@ -69,7 +81,7 @@ if ($db->query($result) == TRUE) {
 	
 	
 } else {
-   echo $gold['coin']; 
+
 }
 
 		//echo print_r($result['coin'], true);
@@ -79,5 +91,11 @@ if ($db->query($result) == TRUE) {
 		echo "ไม่สามารถเชื่อมต่อฐานข้อมูลได้ : ".$e->getMessage();
 	
 	}
+}else{
+	echo "<script type='text/javascript'>";
+	echo "alert('Code Not Found Please Try Again');";
+	echo "window.location = 'credit.php'; ";
+	echo "</script>";
+}
 
 ?>

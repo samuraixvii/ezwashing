@@ -98,6 +98,9 @@ $coin =$codeval['coin'];
                 <li>
                     <a href="contact.php">ติดต่อเรา</a>
                 </li>
+                <li>
+                    <a href="index.html">ออกจากระบบ</a>
+                </li>
             </ul>
         </div>
     </div>
