@@ -38,7 +38,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>EZ Washing</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -100,7 +100,7 @@ session_start();
     <div class="contain">
         <div class="contain-padding">
         <div class="title">
-            <div class="text-title">หอพักรักนะจุ๊บๆ</div>
+            <div class="text-title"><span style="color: #46F89F;">EZ</span>Washing</div>
             <div class="credit">
                <h1><?php echo $result['coin'] ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>

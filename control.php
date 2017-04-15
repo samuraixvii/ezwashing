@@ -90,7 +90,7 @@ session_start();
     <div class="contain">
         <div class="contain-padding">
         <div class="title">
-            <div class="text-title">หอพักรักนะจุ๊บๆ</div>
+            <div class="text-title"><span style="color: #46F89F;">EZ</span>Washing</div>
             <div class="credit">
                <h1><?php echo $result['coin'] ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>

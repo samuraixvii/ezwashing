@@ -331,3 +331,8 @@ animation-direction: alternate;
     stroke-dashoffset: 360;
   }
 }
+.contain_content_person h5
+{
+    padding: 0;
+    margin: 0;
+}
