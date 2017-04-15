@@ -73,16 +73,16 @@ session_start();
                     </div>
                 </li>
                 <li>
-                    <a href="control.html">หน้าแรก</a>
+                    <a href="control.php">หน้าแรก</a>
                 </li>
                 <li>
-                    <a href="credit.html">เติมเครดิต</a>
+                    <a href="credit.php">เติมเครดิต</a>
                 </li>
                 <li>
-                    <a href="person.html">ข้อมูลส่วนตัว</a>
+                    <a href="person.php">ข้อมูลส่วนตัว</a>
                 </li>
                 <li>
-                    <a href="contact.html">ติดต่อเรา</a>
+                    <a href="contact.php">ติดต่อเรา</a>
                 </li>
             </ul>
         </div>
@@ -135,7 +135,7 @@ session_start();
     </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
 </svg>
 <div class="button_start">
-                        <a href="washingmac.html">ใช้งาน</a>
+                        <a href="washingmac.php">ใช้งาน</a>
                     </div>
 
                     </div>
@@ -179,7 +179,7 @@ session_start();
     </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
 </svg>
 <div class="button_start">
-                        <a href="washingmac2.html">ใช้งาน</a>
+                        <a href="washingmac2.php">ใช้งาน</a>
                     </div>
                     </div>
 

@@ -1,3 +1,36 @@
+<?php
+session_start();
+
+ 
+    $HOST_NAME = "localhost";
+    $DB_NAME = "ezwashing";
+    $CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
+ 
+    $USERNAME = "root";     // ตั้งค่าตามการใช้งานจริง
+    $PASSWORD = "";  // ตั้งค่าตามการใช้งานจริง
+    $addcoin =0;
+ 
+    try {
+    
+        $db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
+        // คำสั่ง SQL
+        $sql = "SELECT username,password,coin
+                FROM ezwashing
+                ";
+                
+        // ใช้คำสั่ง prepare
+        $ps = $db->prepare($sql);
+        
+        $ps->execute(array("username" == $_SESSION['abc']));
+        $result = $ps->fetch();
+    $addcoin =$result['coin'] ;
+    
+    } catch (PDOException $e) {
+    
+        echo "ไม่สามารถเชื่อมต่อฐานข้อมูลได้ : ".$e->getMessage();
+    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,21 +78,21 @@
                 <li>
                     <img class="user-img" src="images/profile.jpg" alt="">
                     <div class="user-name">
-                        <h3>USERNAME</h3>
+                        <h3><?php echo $_SESSION['abc'] ?></h3>
                         <p>administrator</p>
                     </div>
                 </li>
                 <li>
-                    <a href="control.html">หน้าแรก</a>
+                    <a href="control.php">หน้าแรก</a>
                 </li>
                 <li>
-                    <a href="credit.html">เติมเครดิต</a>
+                    <a href="credit.php">เติมเครดิต</a>
                 </li>
                 <li>
-                    <a href="person.html">ข้อมูลส่วนตัว</a>
+                    <a href="person.php">ข้อมูลส่วนตัว</a>
                 </li>
                 <li>
-                    <a href="contact.html">ติดต่อเรา</a>
+                    <a href="contact.php">ติดต่อเรา</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +102,7 @@
         <div class="title">
             <div class="text-title">ข้อมูลส่วนตัว</div>
             <div class="credit">
-               <h1>20<span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
+               <h1><?php echo $result['coin'] ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>
         </div>
         <div class="contain_content_person">

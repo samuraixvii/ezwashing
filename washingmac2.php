@@ -1,3 +1,36 @@
+<?php
+session_start();
+
+ 
+    $HOST_NAME = "localhost";
+    $DB_NAME = "ezwashing";
+    $CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
+ 
+    $USERNAME = "root";     // ตั้งค่าตามการใช้งานจริง
+    $PASSWORD = "";  // ตั้งค่าตามการใช้งานจริง
+    $addcoin =0;
+ 
+    try {
+    
+        $db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
+        // คำสั่ง SQL
+        $sql = "SELECT username,password,coin
+                FROM ezwashing
+                ";
+                
+        // ใช้คำสั่ง prepare
+        $ps = $db->prepare($sql);
+        
+        $ps->execute(array("username" == $_SESSION['abc']));
+        $result = $ps->fetch();
+    $addcoin =$result['coin'] ;
+    
+    } catch (PDOException $e) {
+    
+        echo "ไม่สามารถเชื่อมต่อฐานข้อมูลได้ : ".$e->getMessage();
+    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +38,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>EZ Washing</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,21 +78,21 @@
                 <li>
                     <img class="user-img" src="images/profile.jpg" alt="">
                     <div class="user-name">
-                        <h3>USERNAME</h3>
+                        <h3><?php echo $_SESSION['abc'] ?></h3>
                         <p>administrator</p>
                     </div>
                 </li>
                 <li>
-                    <a href="control.html">หน้าแรก</a>
+                    <a href="control.php">หน้าแรก</a>
                 </li>
                 <li>
-                    <a href="credit.html">เติมเครดิต</a>
+                    <a href="credit.php">เติมเครดิต</a>
                 </li>
                 <li>
-                    <a href="person.html">ข้อมูลส่วนตัว</a>
+                    <a href="person.php">ข้อมูลส่วนตัว</a>
                 </li>
                 <li>
-                    <a href="contact.html">ติดต่อเรา</a>
+                    <a href="contact.php">ติดต่อเรา</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +102,7 @@
         <div class="title">
             <div class="text-title">หอพักรักนะจุ๊บๆ</div>
             <div class="credit">
-               <h1>20<span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
+               <h1><?php echo $result['coin'] ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>
         </div>
         <div class="contain_content_about">
@@ -83,10 +116,10 @@
 <path style="fill:#D4DEED;" d="M432.552,88.276H79.448V17.655C79.448,7.904,87.352,0,97.103,0h317.793
     c9.751,0,17.655,7.904,17.655,17.655V88.276z"/>
 <circle style="fill:#C4CFE3;" cx="256" cy="256" r="141.241"/>
-<circle id="washing-1" style="fill:#54CE54;" cx="256" cy="256" r="114.759"/>
+<circle id="washing-2" style="fill:#54CE54;" cx="256" cy="256" r="114.759"/>
 <circle style="fill:#444455;" cx="256" cy="256" r="97.103"/>
 <circle style="fill:#5A5D6F;" cx="256" cy="256" r="61.793"/>
-<text id="printf" x="50%" y="50%" text-anchor="middle" class="text_incircle" style="fill:#fff;" dy=".3em">ว่าง</text>
+<text id="printf2" x="50%" y="50%" text-anchor="middle" class="text_incircle" style="fill:#fff;" dy=".3em">ว่าง</text>
   </g>
 <path style="fill:#C4CFE3;" d="M185.379,88.276h-79.448c-4.875,0-8.828-3.953-8.828-8.828V26.483c0-4.875,3.953-8.828,8.828-8.828
     h79.448c4.875,0,8.828,3.953,8.828,8.828v52.966C194.207,84.323,190.254,88.276,185.379,88.276z"/>
@@ -156,8 +189,7 @@
     // Broker variables
     var MQTTbroker = 'broker.mqttdashboard.com';
     var MQTTport = 8000;
-    var MQTTtopic = 'ezwashing/mach1';
-
+    var MQTTtopic = 'ezwashing/mach2';
 
     // MQTT connecton options
     var options = {
@@ -190,13 +222,13 @@
 
                 var thenum = message.payloadString.replace( /^\D+/g, '');
                 if(Number(thenum) > 0){
-                    $('#washing-1').addClass('countdown_on');
-                    document.getElementById("printf").innerHTML = Number(thenum);
+                    $('#washing-2').addClass('countdown_on');
+                    document.getElementById("printf2").innerHTML = Number(thenum);
                     document.getElementById("text_status").innerHTML = 'ไม่ว่าง';
                     $('#text_status').addClass('countdown_on_txt');
                 }else{
-                    $('#washing-1').removeClass('countdown_on');
-                    document.getElementById("printf").innerHTML = 'ว่าง';
+                    $('#washing-2').removeClass('countdown_on');
+                    document.getElementById("printf2").innerHTML = 'ว่าง';
                     document.getElementById("text_status").innerHTML = 'ว่าง';
 
                     $('#text_status').removeClass('countdown_on_txt');
