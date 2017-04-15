@@ -17,7 +17,7 @@ session_start();
     
         $db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
         // คำสั่ง SQL
-        $sql = "SELECT username,coin
+        $sql = "SELECT username,coin,name,password,room
                 FROM ezwashing where username ='{$_SESSION['abc']}'
                 ";
                 
@@ -113,15 +113,14 @@ $coin =$codeval['coin'];
             </div>
         </div>
         <div class="contain_content_person">
-            <input type="text" class="form-control-person" value="Namw Lastname">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['name'] ?>">
             <br>
-            <input type="text" class="form-control-person" value="207">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['room'] ?>">
             <br>
-            <input type="text" class="form-control-person" value="username">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['username'] ?>">
             <br>
-            <input type="password" class="form-control-person" value="New password">
-            <br>
-            <input type="password" class="form-control-person" value="Confirm password">
+            <input type="password" class="form-control-person" value="<?php echo $codeval['password'] ?>">
+ 
             <br>
             <br>
             <button type="submit" class="button-credit">ตกลง</button>

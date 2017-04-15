@@ -8,7 +8,7 @@ session_start();
 	$USERNAME = "root";     // ตั้งค่าตามการใช้งานจริง
 	$PASSWORD = "";  // ตั้งค่าตามการใช้งานจริง
 	$addcoin =0;
- 
+
 	try {
 	
 		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
@@ -21,7 +21,7 @@ session_start();
 		
 		$ps->execute(array("username" == "'{$_SESSION['abc']}'"));
 		$gold = $ps->fetch();
-
+ if ("'{$gold['coin']}'" != 0) {
 		/*$old = "SELECT coin from ezwashing where username = '{$_SESSION['abc']}'";*/
 $coinall = $gold['coin']-2;
 $result = "UPDATE ezwashing set coin = $coinall  where  username = '{$_SESSION['abc']}'"  ;
@@ -36,6 +36,12 @@ if ($db->query($result) == TRUE) {
 	
 } else {
    echo $gold['coin']; 
+}}
+else {
+echo "<script type='text/javascript'>";
+	echo "alert('Please Refund');";
+	echo "window.location = 'credit.php'; ";
+	echo "</script>";
 }
 
 		//echo print_r($result['coin'], true);
