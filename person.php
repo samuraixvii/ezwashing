@@ -42,7 +42,7 @@ $coin =$codeval['coin'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>EZ Washing</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -114,6 +114,7 @@ $coin =$codeval['coin'];
         </div>
 
         <div class="contain_content_person">
+<<<<<<< HEAD
         <form action="update.php" method="POST">
             <input type="text" class="form-control-person" value="<?php echo $codeval['name'] ?>" >
             <br>
@@ -123,6 +124,27 @@ $coin =$codeval['coin'];
             <br>
             <input type="password" class="form-control-person" value="<?php echo $codeval['password'] ?>" name="password">
  
+=======
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h5>ชื่อ - สกุล <input type="text" class="form-control-person" value="Namw Lastname" style="color: #ababab;"></h5>
+            
+            <br>
+            <h5>ห้องพัก <input type="text" class="form-control-person" value="207" style="color: #ababab;"></h5>
+            
+            <br>
+            <h5>ชื่อผู้ใช้ <input type="text" class="form-control-person" value="username" style="color: #ababab;"></h5>
+            
+            <br>
+            <h5>รหัสผ่าน <input type="password" class="form-control-person" value="New password" style="color: #ababab;"></h5>
+            
+            <br>
+            <h5>ยืนยันรหัสผ่าน <input type="password" class="form-control-person" value="Confirm password" style="color: #ababab;"></h5>
+            
+>>>>>>> origin/master
             <br>
             <br>
             <button type="submit" class="button-credit">ตกลง</button></form>
