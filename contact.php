@@ -2,34 +2,38 @@
 session_start();
 
  
-    $HOST_NAME = "localhost";
+        $HOST_NAME = "localhost";
+
     $DB_NAME = "ezwashing";
     $CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  
     $USERNAME = "root";     // ตั้งค่าตามการใช้งานจริง
     $PASSWORD = "";  // ตั้งค่าตามการใช้งานจริง
-    $addcoin =0;
+    $coin =0;
+    $coinall = 0;
+
  
     try {
     
         $db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
         // คำสั่ง SQL
-        $sql = "SELECT username,password,coin
-                FROM ezwashing
+        $sql = "SELECT username,coin
+                FROM ezwashing where username ='{$_SESSION['abc']}'
                 ";
                 
         // ใช้คำสั่ง prepare
         $ps = $db->prepare($sql);
         
-        $ps->execute(array("username" == $_SESSION['abc']));
-        $result = $ps->fetch();
-    $addcoin =$result['coin'] ;
+        $ps->execute(array( "username" == "'{$_SESSION['abc']}'"));
+        $codeval = $ps->fetch();
+$coin =$codeval['coin'];
     
     } catch (PDOException $e) {
     
         echo "ไม่สามารถเชื่อมต่อฐานข้อมูลได้ : ".$e->getMessage();
     
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,6 +98,9 @@ session_start();
                 <li>
                     <a href="contact.php">ติดต่อเรา</a>
                 </li>
+                <li>
+                    <a href="contact.php">ออกจากระบบ</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -102,7 +109,7 @@ session_start();
         <div class="title">
             <div class="text-title">ติดต่อเรา</div>
             <div class="credit">
-               <h1><?php echo $result['coin'] ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
+               <h1><?php echo $coin ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>
         </div>
         <div class="contain_content_person">

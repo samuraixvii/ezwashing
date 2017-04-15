@@ -23,11 +23,25 @@ body
 {
     padding: 0 50px;
 }
+.form-group{
+    font-family: 'Mitr', sans-serif;
+
+}
 .form-control
 {
     border-radius: 100px !important;
     border: 10px solid #46F89F !important;
     padding: 30px 20px !important;
+}
+.form-controls
+{
+    text-align: center;
+    width: 150px;
+    border-radius: 100px;
+    border: 10px solid #46F89F;
+    padding: 30px 20px;
+    font-size: 10pt;
+    font-family: 'Mitr', sans-serif;
 }
 .button
 {
