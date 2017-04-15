@@ -22,7 +22,7 @@ session_start();
 		
 		$ps->execute(array("username" == "'{$_SESSION['abc']}'"));
 		$gold = $ps->fetch();
- if ("'{$gold['coin']}'" != 0) {
+ if ("'{$gold['coin']}'" != "0") {
 		/*$old = "SELECT coin from ezwashing where username = '{$_SESSION['abc']}'";*/
 $coinall = $gold['coin']-2;
 $result = "UPDATE ezwashing set coin = $coinall  where  username = '{$_SESSION['abc']}'"  ;
