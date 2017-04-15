@@ -112,18 +112,20 @@ $coin =$codeval['coin'];
                <h1><?php echo $coin ?><span>COIN</span><p>จำนวนเหรียญของคุณ</p></h1>
             </div>
         </div>
+
         <div class="contain_content_person">
-            <input type="text" class="form-control-person" value="<?php echo $codeval['name'] ?>">
+        <form action="update.php" method="POST">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['name'] ?>" >
             <br>
-            <input type="text" class="form-control-person" value="<?php echo $codeval['room'] ?>">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['room'] ?>" name="room">
             <br>
-            <input type="text" class="form-control-person" value="<?php echo $codeval['username'] ?>">
+            <input type="text" class="form-control-person" value="<?php echo $codeval['username'] ?>" name="username">
             <br>
-            <input type="password" class="form-control-person" value="<?php echo $codeval['password'] ?>">
+            <input type="password" class="form-control-person" value="<?php echo $codeval['password'] ?>" name="password">
  
             <br>
             <br>
-            <button type="submit" class="button-credit">ตกลง</button>
+            <button type="submit" class="button-credit">ตกลง</button></form>
             <br>
         </div>
 
