@@ -9,6 +9,7 @@ session_start();
 	$USERNAME = "root";     // ตั้งค่าตามการใช้งานจริง
 	$PASSWORD = "";  // ตั้งค่าตามการใช้งานจริง
 	$addcoin =0;
+	$limit =0;
  
 	try {
 	
@@ -22,7 +23,7 @@ session_start();
 		
 		$ps->execute(array("username" == "'{$_SESSION['abc']}'"));
 		$gold = $ps->fetch();
- if ("'{$gold['coin']}'" != "0") {
+ if ("'{$gold['coin']}'" > "'{$limit}'") {
 		/*$old = "SELECT coin from ezwashing where username = '{$_SESSION['abc']}'";*/
 $coinall = $gold['coin']-2;
 $result = "UPDATE ezwashing set coin = $coinall  where  username = '{$_SESSION['abc']}'"  ;
