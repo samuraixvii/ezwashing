@@ -203,6 +203,10 @@ img.user-img {
     font-size: 40px;
 }
 
+#printf2{
+    font-size: 40px;
+}
+
 .countdown-number{
     font-size: 30px;
 }
@@ -222,9 +226,15 @@ footer{
   stroke-width: 1.8;
 }
 
-
 #washing-1 {
 fill: #54CE54;
+stroke-dasharray: 100 60;     stroke-width: 10;      stroke-dashoffset: 100;    stroke-linecap: round;
+  transition: all .5s ease;
+}
+
+
+#washing-2{
+    fill: #54CE54;
 stroke-dasharray: 100 60;     stroke-width: 10;      stroke-dashoffset: 100;    stroke-linecap: round;
   transition: all .5s ease;
 }

@@ -177,7 +177,7 @@ $coin =$codeval['coin'];
            <form method="post" action="subcoin1.php">
              <input type="hidden" value="<? echo $_SESSION['abc']; ?>">
           
-              <button id="myButton" type="submit" class="button_coin" autocomplete="off" data-value="use" value="submit"> 
+              <button id="myButton2" type="submit" class="button_coin" autocomplete="off" data-value="use" value="submit"> 
                         ใช้งาน
                         <div class="ripple-wrapper"></div>
           </button></form>
@@ -187,7 +187,7 @@ $coin =$codeval['coin'];
         </div>
 
 
-        <footer id="printf2">
+        <footer>
             Copyright © 2017 by EZwashing
         </footer>
     </div>
@@ -206,12 +206,12 @@ $coin =$codeval['coin'];
       timeout: 3,
       onSuccess: () => {
         console.log("[mqtt:connection] connected");
-        alert("Connection succeeded.");
+        // alert("Connection succeeded.");
         client.subscribe(MQTTtopic, {qos: 1});
       },
       onFailure: (message) => {
         console.log("[mqtt:connection] failed, ERROR: " + message.errorMessage);
-        alert("Connection failed, ERROR: " + message.errorMessage);
+        // alert("Connection failed, ERROR: " + message.errorMessage);
         window.setTimeout(location.reload(),5000); //wait 5seconds before trying to connect again.
       }
     };
@@ -245,13 +245,14 @@ $coin =$codeval['coin'];
                 }
             };
                                                                                                                                                              
-    $('button').click(function(e) {
+    $('#myButton2').click(function(e) {
       var value = $(this).data('value').toString();
       function m(value) {
         }
       message = new Paho.MQTT.Message(value);
       message.destinationName = MQTTtopic;
       client.send(message);
+      // alert(message);
 
       // $.snackbar({
       //   content: "Published: " + value

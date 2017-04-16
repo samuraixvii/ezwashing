@@ -163,7 +163,7 @@ $coin =$codeval['coin'];
 
 <circle style="fill:#444455;" cx="256" cy="256" r="97.103"/>
 <circle id="animation_countdown" class="washing-2" style="fill:#5A5D6F;" cx="256" cy="256" r="61.793"/>
-<text id="printf" x="50%" y="50%" text-anchor="middle"  style="fill:#fff;" dy=".3em">ว่าง</text>
+<text id="printf2" x="50%" y="50%" text-anchor="middle"  style="fill:#fff;" dy=".3em">ว่าง</text>
 
 <path style="fill:#C4CFE3;" d="M185.379,88.276h-79.448c-4.875,0-8.828-3.953-8.828-8.828V26.483c0-4.875,3.953-8.828,8.828-8.828
     h79.448c4.875,0,8.828,3.953,8.828,8.828v52.966C194.207,84.323,190.254,88.276,185.379,88.276z"/>
@@ -195,7 +195,7 @@ $coin =$codeval['coin'];
         </div>
 
         </div>
-        <footer id="printf2">
+        <footer>
             Copyright © 2017 by EZwashing
         </footer>
     </div>

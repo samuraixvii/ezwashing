@@ -152,7 +152,7 @@ $coin =$codeval['coin'];
         </div>
 
 
-        <footer id="printf2">
+        <footer>
             Copyright © 2017 by EZwashing
         </footer>
     </div>
