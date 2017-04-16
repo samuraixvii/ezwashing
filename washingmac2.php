@@ -83,7 +83,7 @@ $coin =$codeval['coin'];
                     <img class="user-img" src="images/profile.jpg" alt="">
                     <div class="user-name">
                         <h3><?php echo $_SESSION['abc'] ?></h3>
-                        <p>administrator</p>
+                        <p>กำลังใช้งาน</p>
                     </div>
                 </li>
                 <li>
@@ -154,7 +154,7 @@ $coin =$codeval['coin'];
    <div class="washing_about">
        <ul>
            <li>
-               <h1>เครื่องที่ 1</h1>
+               <h1>เครื่องที่ 2</h1>
            </li>
            <li>
                <h2>
